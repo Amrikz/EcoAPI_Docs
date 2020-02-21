@@ -680,7 +680,7 @@
       }
     },
     "/private/product/update": {
-      "get": {
+      "post": {
         "summary": "Your GET endpoint",
         "tags": [],
         "responses": {
