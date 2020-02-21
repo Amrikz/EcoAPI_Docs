@@ -1,0 +1,632 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "EcoAPI",
+    "version": "1.0",
+    "description": "First API for first tasks"
+  },
+  "servers": [
+    {
+      "url": "http://ecodomapi/api"
+    }
+  ],
+  "paths": {
+    "/public": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [
+          "public"
+        ],
+        "operationId": "get-public",
+        "description": "At current moment does nothing.\nAnd all links in this branch don't need anything to access.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": "Welcome to public"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/public/login": {
+      "post": {
+        "summary": "Auth user",
+        "operationId": "post-public-login",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": [
+                        {
+                          "id": 14,
+                          "fio": null,
+                          "login": "qwewda",
+                          "password": "$2y$09$lDktKs9U4ufVYRI4Q8p23eYhCUIxURcHsUIw1pvliWJKtkQUabB8u",
+                          "phone": 214124211,
+                          "smsConfirm": null,
+                          "city_id": null,
+                          "bonuses": 0,
+                          "token": "$2y$07$cuRV/nSM5Kxyn.bbBJEjoOOWNvvOWXs9L71.8vwRnuKdsJAWoqjDm",
+                          "role": 3,
+                          "created_at": "2020-02-18 17:21:55",
+                          "updated_at": "2020-02-18 17:21:55",
+                          "deleted_at": null
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "NULL",
+                      "required": "|login|password"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "example"
+            },
+            "in": "query",
+            "name": "login",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "example"
+            },
+            "in": "query",
+            "name": "password",
+            "required": true
+          }
+        ],
+        "requestBody": {},
+        "tags": [
+          "public",
+          "auth"
+        ],
+        "description": ""
+      }
+    },
+    "/public/smsconfirm": {
+      "post": {
+        "summary": "Confirm sms for user",
+        "operationId": "post-public-smsconfirm",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Successfully confirmed!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "NULL",
+                      "required": "|confirm_code"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "123456"
+            },
+            "in": "query",
+            "name": "confirm_code",
+            "required": true
+          }
+        ],
+        "description": "Confirms account via sms",
+        "tags": [
+          "public",
+          "auth"
+        ]
+      }
+    },
+    "/public/register": {
+      "post": {
+        "summary": "Register user",
+        "operationId": "post-public-register",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Registered successfully."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "NULL",
+                      "required": "|login|password|confirm_password|phone"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "example"
+            },
+            "in": "query",
+            "name": "login",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "example"
+            },
+            "in": "query",
+            "name": "password",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "example"
+            },
+            "in": "query",
+            "name": "confirm_password",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "12345678911",
+              "maxLength": 15,
+              "minLength": 11
+            },
+            "in": "query",
+            "name": "phone",
+            "required": true
+          }
+        ],
+        "tags": [
+          "auth",
+          "public"
+        ]
+      }
+    },
+    "/public/product/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [
+          "product",
+          "public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "title": "Koblan",
+                        "description": "И типо я не помню что было после балкона",
+                        "price": 0,
+                        "composition": "",
+                        "nutritional": "",
+                        "expiration_date": 0,
+                        "created_at": "2020-02-17 16:25:28",
+                        "updated_at": "2020-02-17 16:25:28",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Nothing found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-product-getall"
+      }
+    },
+    "/public/product/new": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [
+          "product",
+          "public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 22,
+                        "title": "Хаха,товар",
+                        "description": "Я сеРЁга",
+                        "price": 101,
+                        "composition": null,
+                        "nutritional": null,
+                        "expiration_date": null,
+                        "created_at": "2020-02-20 10:43:48",
+                        "updated_at": "2020-02-20 10:43:48",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Object with this data not found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-product-new",
+        "description": "Return products with closest data of creation",
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer",
+              "default": "1"
+            },
+            "in": "query",
+            "name": "limit",
+            "description": "Limits output products for this value"
+          }
+        ]
+      }
+    },
+    "/public/product/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [
+          "public",
+          "product"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "title": "Koblan",
+                        "description": "И типо я не помню что было после балкона",
+                        "price": 0,
+                        "composition": "",
+                        "nutritional": "",
+                        "expiration_date": 0,
+                        "created_at": "2020-02-17 16:25:28",
+                        "updated_at": "2020-02-17 16:25:28",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json.Formate {'key':'value'}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-product-get",
+        "description": "",
+        "requestBody": {},
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ \"data\" : \"value\" }"
+            },
+            "in": "query",
+            "name": "data",
+            "description": "",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/public/product/new": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [
+          "product",
+          "public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 22,
+                        "title": "Хаха,товар",
+                        "description": "Я сеРЁга",
+                        "price": 101,
+                        "composition": null,
+                        "nutritional": null,
+                        "expiration_date": null,
+                        "created_at": "2020-02-20 10:43:48",
+                        "updated_at": "2020-02-20 10:43:48",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Object with this data not found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-product-new",
+        "description": "Return products with closest data of creation",
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer",
+              "default": "1"
+            },
+            "in": "query",
+            "name": "limit",
+            "description": "Limits output products for this value"
+          }
+        ]
+      }
+    },
+    "/public/category/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [
+          "public",
+          "product"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "title": "Koblan",
+                        "description": "И типо я не помню что было после балкона",
+                        "price": 0,
+                        "composition": "",
+                        "nutritional": "",
+                        "expiration_date": 0,
+                        "created_at": "2020-02-17 16:25:28",
+                        "updated_at": "2020-02-17 16:25:28",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json.Formate {'key':'value'}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-category-get",
+        "description": "",
+        "requestBody": {},
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ \"data\" : \"value\" }"
+            },
+            "in": "query",
+            "name": "data",
+            "description": "",
+            "required": true
+          }
+        ]
+      }
+    }
+  }
+}
