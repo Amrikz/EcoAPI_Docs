@@ -13,11 +13,7 @@
   "paths": {
     "/public/category/get": {
       "get": {
-        "summary": "Your GET endpoint",
-        "tags": [
-          "public",
-          "product"
-        ],
+        "summary": "Get categories by parameter",
         "responses": {
           "200": {
             "description": "OK",
@@ -82,15 +78,19 @@
             "description": "",
             "required": true
           }
+        ],
+        "tags": [
+          "category",
+          "public"
         ]
       }
     },
     "/public/product/get": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Get products by parameter",
         "tags": [
-          "public",
-          "product"
+          "product",
+          "public"
         ],
         "responses": {
           "200": {
@@ -161,7 +161,7 @@
     },
     "/public/product/new": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Show newest products",
         "tags": [
           "product",
           "public"
@@ -232,7 +232,7 @@
     },
     "/public/product/getall": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Get all from products",
         "tags": [
           "product",
           "public"
@@ -436,8 +436,8 @@
         ],
         "description": "Confirms account via sms",
         "tags": [
-          "public",
-          "auth"
+          "auth",
+          "public"
         ]
       }
     },
@@ -522,15 +522,15 @@
         ],
         "requestBody": {},
         "tags": [
-          "public",
-          "auth"
+          "auth",
+          "public"
         ],
         "description": ""
       }
     },
     "/public": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Public",
         "tags": [
           "public"
         ],
@@ -559,7 +559,7 @@
     },
     "/private/product/create": {
       "post": {
-        "summary": "",
+        "summary": "Create product",
         "operationId": "post-private-product-create",
         "responses": {
           "200": {
@@ -601,8 +601,8 @@
           }
         },
         "tags": [
-          "private",
-          "product"
+          "product",
+          "private"
         ],
         "parameters": [
           {
@@ -622,8 +622,8 @@
       "post": {
         "summary": "Delete product",
         "tags": [
-          "private",
-          "product"
+          "product",
+          "private"
         ],
         "responses": {
           "200": {
@@ -681,8 +681,11 @@
     },
     "/private/product/update": {
       "post": {
-        "summary": "Your GET endpoint",
-        "tags": [],
+        "summary": "Update product",
+        "tags": [
+          "product",
+          "private"
+        ],
         "responses": {
           "200": {
             "description": "OK",
