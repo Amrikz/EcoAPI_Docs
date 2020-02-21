@@ -745,7 +745,8 @@
             "required": true,
             "description": "id,title,price"
           }
-        ]
+        ],
+        "description": ""
       }
     }
   }
