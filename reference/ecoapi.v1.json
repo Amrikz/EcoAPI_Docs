@@ -28,14 +28,10 @@
                     "value": [
                       {
                         "id": 1,
-                        "title": "Koblan",
-                        "description": "И типо я не помню что было после балкона",
-                        "price": 0,
-                        "composition": "",
-                        "nutritional": "",
-                        "expiration_date": 0,
-                        "created_at": "2020-02-17 16:25:28",
-                        "updated_at": "2020-02-17 16:25:28",
+                        "name": "name",
+                        "img_id": "route/to/your/file.img",
+                        "created_at": "2020-02-21 11:54:36",
+                        "updated_at": "2020-02-21 11:54:36",
                         "deleted_at": null
                       }
                     ]
@@ -71,7 +67,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "{ \"data\" : \"value\" }"
+              "pattern": "{ 'data' : 'value' }"
             },
             "in": "query",
             "name": "data",
@@ -747,6 +743,1512 @@
           }
         ],
         "description": ""
+      }
+    },
+    "/public/category/getall": {
+      "get": {
+        "summary": "Get all categories",
+        "tags": [
+          "category",
+          "public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "name": "name",
+                        "img_id": "route/to/your/file.img",
+                        "created_at": "2020-02-21 11:54:36",
+                        "updated_at": "2020-02-21 11:54:36",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Nothing found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-category-getall"
+      }
+    },
+    "/private/category/update": {
+      "post": {
+        "summary": "Update category",
+        "tags": [
+          "category",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Updated successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Not valid id or data to update"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-category-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'key' : ' value' }"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "/private/category/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [
+          "category",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Deleted successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-category-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/category/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [
+          "category",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Created successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json formate"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-category-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'name' : ' value' , 'img_id' : ' value'}"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true,
+            "description": "name, img_id in json"
+          }
+        ]
+      }
+    },
+    "/private/category/assoc/get": {
+      "get": {
+        "summary": "Get category/product association by parameter",
+        "tags": [
+          "association",
+          "category",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "category_id": 2,
+                        "product_id": 2,
+                        "created_at": "2020-02-20 12:42:33",
+                        "updated_at": "2020-02-20 12:42:33",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json. formate key:value"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-category-assoc-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'key' : 'value' }"
+            },
+            "in": "query",
+            "name": "data",
+            "description": "",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/category/assoc/getall": {
+      "get": {
+        "summary": "Get all category/product associations",
+        "tags": [
+          "association",
+          "category",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "category_id": 2,
+                        "product_id": 2,
+                        "created_at": "2020-02-20 12:42:33",
+                        "updated_at": "2020-02-20 12:42:33",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Nothing found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-category-assoc-getall"
+      }
+    },
+    "/private/category/assoc/update": {
+      "post": {
+        "summary": "Update category/product association",
+        "operationId": "post-private-category-assoc-update",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Updated successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|id|data in json formate"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'key' : ' value' }"
+            },
+            "in": "query",
+            "required": true,
+            "name": "data"
+          }
+        ],
+        "tags": [
+          "association",
+          "category",
+          "private"
+        ]
+      }
+    },
+    "/private/category/assoc/delete": {
+      "post": {
+        "summary": "Delete category/product association",
+        "operationId": "post-private-category-assoc-delete",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Deleted successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "tags": [
+          "association",
+          "category",
+          "private"
+        ]
+      }
+    },
+    "/private/category/assoc/create": {
+      "post": {
+        "summary": "Create category/product association",
+        "operationId": "post-private-category-assoc-create",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Created successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json formate"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'category_id' : ' value' , 'product_id' : ' value' }"
+            },
+            "in": "query",
+            "name": "data",
+            "description": "category_id, product_id in json",
+            "required": true
+          }
+        ],
+        "tags": [
+          "association",
+          "category",
+          "private"
+        ]
+      }
+    },
+    "/public/filter/get": {
+      "get": {
+        "summary": "Get filters by parameter",
+        "tags": [
+          "filter",
+          "public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "name": 2,
+                        "img_id": 2,
+                        "created_at": "2020-02-21 17:19:49",
+                        "updated_at": "2020-02-21 17:19:49",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json.Formate {\"key\":\"value\"}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-filter-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'key' : 'value' }"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/public/filter/getall": {
+      "get": {
+        "summary": "Get all filters",
+        "tags": [
+          "filter",
+          "public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "name": 2,
+                        "img_id": 2,
+                        "created_at": "2020-02-21 17:19:49",
+                        "updated_at": "2020-02-21 17:19:49",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Nothing found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-filter-getall"
+      }
+    },
+    "/private/filter/update": {
+      "post": {
+        "summary": "Update filter",
+        "tags": [
+          "filter",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Updated successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|id|data in json formate"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-filter-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'key' : 'value' }"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/filter/delete": {
+      "post": {
+        "summary": "Delete filter",
+        "tags": [
+          "filter",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Deleted successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-filter-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/filter/create": {
+      "post": {
+        "summary": "Create filter",
+        "tags": [
+          "filter",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Created successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|name|img"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-filter-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'name' : 'value','img_id' : 'value'  }"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true,
+            "description": "name, img_id in json"
+          }
+        ]
+      }
+    },
+    "/private/filter/assoc/get": {
+      "get": {
+        "summary": "Get filter/product association by parameter",
+        "tags": [
+          "association",
+          "filter",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "filter_id": 1,
+                        "product_id": 1,
+                        "created_at": "2020-02-21 18:09:55",
+                        "updated_at": "2020-02-21 18:09:55",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json. formate key:value"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-filter-assoc-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'key' : 'value' }"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/filter/assoc/getall": {
+      "get": {
+        "summary": "Get all filter/product associations",
+        "tags": [
+          "association",
+          "filter",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "filter_id": 1,
+                        "product_id": 1,
+                        "created_at": "2020-02-21 18:09:55",
+                        "updated_at": "2020-02-21 18:09:55",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Nothing found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-filter-assoc-getall"
+      }
+    },
+    "/private/filter/assoc/update": {
+      "post": {
+        "summary": "Update filter/product associations",
+        "tags": [
+          "association",
+          "filter",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Updated successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|id|data in json formate"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-filter-assoc-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/filter/assoc/delete": {
+      "post": {
+        "summary": "Delete filter/product association",
+        "tags": [
+          "association",
+          "filter",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Deleted successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-filter-assoc-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/filter/assoc/create": {
+      "post": {
+        "summary": "Create filter/product association",
+        "tags": [
+          "association",
+          "filter",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Created successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json formate"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-filter-assoc-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'filter_id' : ' value' , 'product_id' : ' value' }"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true,
+            "description": "filter_id, product_id in json"
+          }
+        ]
+      }
+    },
+    "/private/user/get": {
+      "get": {
+        "summary": "Get users by parameter",
+        "tags": [
+          "user",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "fio": null,
+                        "login": "superadmin",
+                        "password": 1313,
+                        "phone": 214124211,
+                        "smsConfirm": null,
+                        "city_id": null,
+                        "bonuses": 0,
+                        "token": "$1y$17$cuRV/nSdda5Kxyn.sbBJEjoOaWNvvOWXs9L71.8vwRnuKdsJAWoqjDm",
+                        "role": 3,
+                        "created_at": "2020-02-18 17:21:55",
+                        "updated_at": "2020-02-18 17:21:55",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json. formate key:value"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-user-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'key' : 'value' }"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/user/getall": {
+      "get": {
+        "summary": "Get all users",
+        "tags": [
+          "user",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "fio": null,
+                        "login": "superadmin",
+                        "password": 1313,
+                        "phone": 214124211,
+                        "smsConfirm": null,
+                        "city_id": null,
+                        "bonuses": 0,
+                        "token": "$1y$17$cuRV/nSdda5Kxyn.sbBJEjoOaWNvvOWXs9L71.8vwRnuKdsJAWoqjDm",
+                        "role": 3,
+                        "created_at": "2020-02-18 17:21:55",
+                        "updated_at": "2020-02-18 17:21:55",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Nothing found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-user-getall"
+      }
+    },
+    "/private/user/update": {
+      "post": {
+        "summary": "Update user",
+        "tags": [
+          "user",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Updated successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|id|data in json formate"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-user-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/user/delete": {
+      "post": {
+        "summary": "Delete user",
+        "tags": [
+          "user",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Deleted successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-user-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/user/create": {
+      "post": {
+        "summary": "Create user",
+        "tags": [
+          "user",
+          "private"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Created successufully!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json formate"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-user-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'login' : 'value', 'password' : 'value' , 'phone' : 'value' }"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true,
+            "description": "login, password, phone in json"
+          }
+        ]
       }
     }
   }
