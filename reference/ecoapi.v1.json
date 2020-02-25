@@ -11,280 +11,6 @@
     }
   ],
   "paths": {
-    "/public/category/get": {
-      "get": {
-        "summary": "Get categories by parameter",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "example-1": {
-                    "value": [
-                      {
-                        "id": 1,
-                        "name": "name",
-                        "img_id": "route/to/your/file.img",
-                        "created_at": "2020-02-21 11:54:36",
-                        "updated_at": "2020-02-21 11:54:36",
-                        "deleted_at": null
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "message": "",
-                      "required": "|data in json.Formate {'key':'value'}"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get-public-category-get",
-        "description": "",
-        "requestBody": {},
-        "parameters": [
-          {
-            "schema": {
-              "type": "string",
-              "pattern": "{ 'data' : 'value' }"
-            },
-            "in": "query",
-            "name": "data",
-            "description": "",
-            "required": true
-          }
-        ],
-        "tags": [
-          "category",
-          "public"
-        ]
-      }
-    },
-    "/public/product/get": {
-      "get": {
-        "summary": "Get products by parameter",
-        "tags": [
-          "product",
-          "public"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "example-1": {
-                    "value": [
-                      {
-                        "id": 1,
-                        "title": "Koblan",
-                        "description": "И типо я не помню что было после балкона",
-                        "price": 0,
-                        "composition": "",
-                        "nutritional": "",
-                        "expiration_date": 0,
-                        "created_at": "2020-02-17 16:25:28",
-                        "updated_at": "2020-02-17 16:25:28",
-                        "deleted_at": null
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "message": "",
-                      "required": "|data in json.Formate {'key':'value'}"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get-public-product-get",
-        "description": "",
-        "requestBody": {},
-        "parameters": [
-          {
-            "schema": {
-              "type": "string",
-              "pattern": "{ 'key' : 'value' }"
-            },
-            "in": "query",
-            "name": "data",
-            "description": "",
-            "required": true
-          }
-        ]
-      }
-    },
-    "/public/product/new": {
-      "get": {
-        "summary": "Show newest products",
-        "tags": [
-          "product",
-          "public"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "example-1": {
-                    "value": [
-                      {
-                        "id": 22,
-                        "title": "Хаха,товар",
-                        "description": "Я сеРЁга",
-                        "price": 101,
-                        "composition": null,
-                        "nutritional": null,
-                        "expiration_date": null,
-                        "created_at": "2020-02-20 10:43:48",
-                        "updated_at": "2020-02-20 10:43:48",
-                        "deleted_at": null
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "message": "Object with this data not found"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get-public-product-new",
-        "description": "Return products with closest data of creation",
-        "parameters": [
-          {
-            "schema": {
-              "type": "integer",
-              "default": "1"
-            },
-            "in": "query",
-            "name": "limit",
-            "description": "Limits output products for this value"
-          }
-        ]
-      }
-    },
-    "/public/product/getall": {
-      "get": {
-        "summary": "Get all from products",
-        "tags": [
-          "product",
-          "public"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "example-1": {
-                    "value": [
-                      {
-                        "id": 1,
-                        "title": "Koblan",
-                        "description": "И типо я не помню что было после балкона",
-                        "price": 0,
-                        "composition": "",
-                        "nutritional": "",
-                        "expiration_date": 0,
-                        "created_at": "2020-02-17 16:25:28",
-                        "updated_at": "2020-02-17 16:25:28",
-                        "deleted_at": null
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "message": "Nothing found"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get-public-product-getall"
-      }
-    },
     "/public/register": {
       "post": {
         "summary": "Register user",
@@ -553,6 +279,210 @@
       },
       "parameters": []
     },
+    "/public/product/get": {
+      "get": {
+        "summary": "Get products by parameter",
+        "tags": [
+          "product",
+          "public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "title": "Koblan",
+                        "description": "И типо я не помню что было после балкона",
+                        "price": 0,
+                        "composition": "",
+                        "nutritional": "",
+                        "expiration_date": 0,
+                        "created_at": "2020-02-17 16:25:28",
+                        "updated_at": "2020-02-17 16:25:28",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json.Formate {'key':'value'}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-product-get",
+        "description": "",
+        "requestBody": {},
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'key' : 'value' }"
+            },
+            "in": "query",
+            "name": "data",
+            "description": "",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/public/product/new": {
+      "get": {
+        "summary": "Show newest products",
+        "tags": [
+          "product",
+          "public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 22,
+                        "title": "Хаха,товар",
+                        "description": "Я сеРЁга",
+                        "price": 101,
+                        "composition": null,
+                        "nutritional": null,
+                        "expiration_date": null,
+                        "created_at": "2020-02-20 10:43:48",
+                        "updated_at": "2020-02-20 10:43:48",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Object with this data not found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-product-new",
+        "description": "Return products with closest data of creation",
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer",
+              "default": "1"
+            },
+            "in": "query",
+            "name": "limit",
+            "description": "Limits output products for this value"
+          }
+        ]
+      }
+    },
+    "/public/product/getall": {
+      "get": {
+        "summary": "Get all from products",
+        "tags": [
+          "product",
+          "public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "title": "Koblan",
+                        "description": "И типо я не помню что было после балкона",
+                        "price": 0,
+                        "composition": "",
+                        "nutritional": "",
+                        "expiration_date": 0,
+                        "created_at": "2020-02-17 16:25:28",
+                        "updated_at": "2020-02-17 16:25:28",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "Nothing found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-product-getall"
+      }
+    },
     "/private/product/create": {
       "post": {
         "summary": "Create product",
@@ -743,6 +673,76 @@
           }
         ],
         "description": ""
+      }
+    },
+    "/public/category/get": {
+      "get": {
+        "summary": "Get categories by parameter",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "name": "name",
+                        "img_id": "route/to/your/file.img",
+                        "created_at": "2020-02-21 11:54:36",
+                        "updated_at": "2020-02-21 11:54:36",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|data in json.Formate {'key':'value'}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-category-get",
+        "description": "",
+        "requestBody": {},
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "{ 'key' : 'value' }"
+            },
+            "in": "query",
+            "name": "data",
+            "description": "",
+            "required": true
+          }
+        ],
+        "tags": [
+          "category",
+          "public"
+        ]
       }
     },
     "/public/category/getall": {
@@ -2247,6 +2247,484 @@
             "name": "data",
             "required": true,
             "description": "login, password, phone in json"
+          }
+        ]
+      }
+    },
+    "/public/image/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-image-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": true,
+            "name": "data"
+          }
+        ]
+      }
+    },
+    "/public/image/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-image-getall"
+      }
+    },
+    "/private/image/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-image-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "file"
+          }
+        ]
+      }
+    },
+    "/private/image/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-image-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/image/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-image-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "name"
+          },
+          {
+            "schema": {},
+            "in": "query",
+            "name": "file",
+            "required": true,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "/private/image/assoc/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-image-assoc-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/image/assoc/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-image-assoc-getall"
+      }
+    },
+    "/private/image/assoc/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-image-assoc-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/image/assoc/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-image-assoc-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/image/assoc/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-private-image-assoc-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
           }
         ]
       }
