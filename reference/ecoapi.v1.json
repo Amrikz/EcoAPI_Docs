@@ -181,18 +181,19 @@
                     "value": {
                       "message": [
                         {
-                          "id": 14,
+                          "id": 17,
                           "fio": null,
-                          "login": "qwewda",
-                          "password": "$2y$09$lDktKs9U4ufVYRI4Q8p23eYhCUIxURcHsUIw1pvliWJKtkQUabB8u",
-                          "phone": 214124211,
+                          "login": "qwewdaw",
+                          "password": "$2y$09$kyv6xF2qxmWgGwdhgi1eouyDl21/b/BX9mmI8wSmjP..rGRWnDbfK",
+                          "phone": 11111111111,
                           "smsConfirm": null,
                           "city_id": null,
+                          "delivery_type": null,
                           "bonuses": 0,
-                          "token": "$2y$07$cuRV/nSM5Kxyn.bbBJEjoOOWNvvOWXs9L71.8vwRnuKdsJAWoqjDm",
-                          "role": 3,
-                          "created_at": "2020-02-18 17:21:55",
-                          "updated_at": "2020-02-18 17:21:55",
+                          "token": "$2y$07$uH47K7HXYM7GBU4Fe1U9F.j0HlR8MAhehXJxMMYnK4gT4/B.9Jq0a",
+                          "role": 1,
+                          "created_at": "2020-02-21 10:13:45",
+                          "updated_at": "2020-02-21 10:13:45",
                           "deleted_at": null
                         }
                       ]
@@ -302,12 +303,13 @@
                         "id": 1,
                         "title": "Koblan",
                         "description": "И типо я не помню что было после балкона",
-                        "price": 0,
+                        "price": 235,
                         "composition": "",
                         "nutritional": "",
                         "expiration_date": 0,
-                        "created_at": "2020-02-17 16:25:28",
-                        "updated_at": "2020-02-17 16:25:28",
+                        "stock_id": 0,
+                        "created_at": "2020-02-17 15:25:28",
+                        "updated_at": "2020-02-17 15:25:28",
                         "deleted_at": null
                       }
                     ]
@@ -349,6 +351,14 @@
             "name": "data",
             "description": "",
             "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit",
+            "description": "Limits output objects for this value"
           }
         ]
       }
@@ -373,15 +383,16 @@
                   "example-1": {
                     "value": [
                       {
-                        "id": 22,
-                        "title": "Хаха,товар",
-                        "description": "Я сеРЁга",
-                        "price": 101,
-                        "composition": null,
-                        "nutritional": null,
-                        "expiration_date": null,
-                        "created_at": "2020-02-20 10:43:48",
-                        "updated_at": "2020-02-20 10:43:48",
+                        "id": 1,
+                        "title": "Koblan",
+                        "description": "И типо я не помню что было после балкона",
+                        "price": 235,
+                        "composition": "",
+                        "nutritional": "",
+                        "expiration_date": 0,
+                        "stock_id": 0,
+                        "created_at": "2020-02-17 15:25:28",
+                        "updated_at": "2020-02-17 15:25:28",
                         "deleted_at": null
                       }
                     ]
@@ -447,12 +458,13 @@
                         "id": 1,
                         "title": "Koblan",
                         "description": "И типо я не помню что было после балкона",
-                        "price": 0,
+                        "price": 235,
                         "composition": "",
                         "nutritional": "",
                         "expiration_date": 0,
-                        "created_at": "2020-02-17 16:25:28",
-                        "updated_at": "2020-02-17 16:25:28",
+                        "stock_id": 0,
+                        "created_at": "2020-02-17 15:25:28",
+                        "updated_at": "2020-02-17 15:25:28",
                         "deleted_at": null
                       }
                     ]
@@ -480,7 +492,16 @@
             }
           }
         },
-        "operationId": "get-public-product-getall"
+        "operationId": "get-public-product-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
       }
     },
     "/private/product/create": {
@@ -737,6 +758,14 @@
             "name": "data",
             "description": "",
             "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit",
+            "description": ""
           }
         ],
         "tags": [
@@ -797,7 +826,16 @@
             }
           }
         },
-        "operationId": "get-public-category-getall"
+        "operationId": "get-public-category-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
       }
     },
     "/private/category/update": {
@@ -1053,6 +1091,13 @@
             "name": "data",
             "description": "",
             "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
           }
         ]
       }
@@ -1110,7 +1155,16 @@
             }
           }
         },
-        "operationId": "get-private-category-assoc-getall"
+        "operationId": "get-private-category-assoc-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
       }
     },
     "/private/category/assoc/update": {
@@ -1367,6 +1421,13 @@
             "in": "query",
             "name": "data",
             "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
           }
         ]
       }
@@ -1423,7 +1484,16 @@
             }
           }
         },
-        "operationId": "get-public-filter-getall"
+        "operationId": "get-public-filter-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
       }
     },
     "/private/filter/update": {
@@ -1678,6 +1748,13 @@
             "in": "query",
             "name": "data",
             "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
           }
         ]
       }
@@ -1735,7 +1812,16 @@
             }
           }
         },
-        "operationId": "get-private-filter-assoc-getall"
+        "operationId": "get-private-filter-assoc-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
       }
     },
     "/private/filter/assoc/update": {
@@ -1998,6 +2084,13 @@
             "in": "query",
             "name": "data",
             "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
           }
         ]
       }
@@ -2061,7 +2154,16 @@
             }
           }
         },
-        "operationId": "get-private-user-getall"
+        "operationId": "get-private-user-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
       }
     },
     "/private/user/update": {
@@ -2294,6 +2396,13 @@
             "in": "query",
             "required": true,
             "name": "data"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
           }
         ]
       }
@@ -2332,7 +2441,16 @@
             }
           }
         },
-        "operationId": "get-public-image-getall"
+        "operationId": "get-public-image-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
       }
     },
     "/private/image/update": {
@@ -2539,6 +2657,13 @@
             "in": "query",
             "name": "data",
             "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
           }
         ]
       }
@@ -2577,7 +2702,16 @@
             }
           }
         },
-        "operationId": "get-private-image-assoc-getall"
+        "operationId": "get-private-image-assoc-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
       }
     },
     "/private/image/assoc/update": {
@@ -2724,6 +2858,1238 @@
             },
             "in": "query",
             "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/order/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/order/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/order/recount": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-recount",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "description": "Recount sum for order"
+      }
+    },
+    "/private/order/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/order/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-delete",
+        "requestBody": {},
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/order/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/order/assoc/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-assoc-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": true,
+            "name": "data"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/order/assoc/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-assoc-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/order/assoc/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-assoc-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/order/assoc/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-assoc-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/order/assoc/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-assoc-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/public/post/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-post-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/public/post/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-post-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/post/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-post-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/post/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-post-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/post/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-post-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/public/comment/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-comment-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/public/comment/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-comment-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/public/comment/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-comment-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/public/comment/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-comment-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/public/comment/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-comment-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/public/product/search": {
+      "get": {
+        "summary": "Show newest products",
+        "tags": [
+          "product",
+          "public"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 1,
+                        "title": "Koblan",
+                        "description": "И типо я не помню что было после балкона",
+                        "price": 235,
+                        "composition": "",
+                        "nutritional": "",
+                        "expiration_date": 0,
+                        "stock_id": 0,
+                        "created_at": "2020-02-17 15:25:28",
+                        "updated_at": "2020-02-17 15:25:28",
+                        "deleted_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "message": "",
+                      "required": "|request|column"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-product-new",
+        "description": "Return products with given request in given sql column",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": true,
+            "name": "request"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": true,
+            "name": "column"
+          }
+        ]
+      }
+    },
+    "/public/city/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-city-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/public/city/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-city-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/city/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-public-city-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/private/city/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-city-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/private/city/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-city-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/public/delivery/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-delivery-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/public/delivery/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-delivery-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/delivery/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-delivery-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/private/delivery/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-delivery-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/private/delivery/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-delivery-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/public/stock_data/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-stock_data-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/public/stock_data/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-stock_data-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/stock_data/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-stock_data-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/stock_data/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-stock_data-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/stock_data/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-stock_data-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/public/stock/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-stock-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/public/stock/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-public-stock-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/stock/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-stock-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/stock/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-stock-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/stock/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-stock-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/order/status": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-order-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "status",
+            "required": true,
+            "description": "1 = Approve, 3 = Cancel"
+          }
+        ]
+      }
+    },
+    "/private/role/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-role-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/role/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-role-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/role/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-role-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/role/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-role-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/role/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-role-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/status/getall": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-status-getall",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/status/get": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-status-get",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          }
+        ]
+      }
+    },
+    "/private/status/create": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-status-create",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/status/update": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-status-update",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "data",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/private/status/delete": {
+      "post": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-private-status-delete",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
             "required": true
           }
         ]
